@@ -1,0 +1,25 @@
+name            = "cf-homepage"
+main            = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Your Cloudflare account ID — find it at dash.cloudflare.com (right sidebar)
+account_id = "YOUR_ACCOUNT_ID_HERE"
+
+[assets]
+directory = "./public"
+
+# Create a KV namespace: Cloudflare dashboard → Workers & Pages → KV → Create namespace
+# Name it anything (e.g. "cf-homepage-layout"), then paste the ID below.
+[[kv_namespaces]]
+binding = "LAYOUT"
+id      = "YOUR_KV_NAMESPACE_ID_HERE"
+
+# Runtime secrets — set these with `wrangler secret put` or via the dashboard.
+# See README for instructions. Never commit real values here.
+#
+# Option A — API Token (recommended, scoped to Workers):
+#   CF_API_TOKEN
+#
+# Option B — Global API Key:
+#   CF_API_EMAIL
+#   CF_API_KEY

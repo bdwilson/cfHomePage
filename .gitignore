@@ -1,0 +1,6 @@
+.dev.vars
+.env
+node_modules/
+.wrangler/
+src/config.js
+sync-public.sh
